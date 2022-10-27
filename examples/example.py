@@ -2,9 +2,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-from peeters_piper.peeter_piper import piper
+#from peeters_piper.peeter_piper import piper
+from peeter_piper import piper
 
-filename = "GW20130314-0057-s02.csv"
+#filename = "GW20130314-0057-s02.csv"
+filename = "B4_additional_field.csv"
 
 dat = pd.read_csv(filename).iloc[:, :10].values
 dat[np.isnan(dat)] = 0
@@ -13,4 +15,4 @@ dat[np.isnan(dat)] = 0
 # Piper plot
 fig = plt.figure()
 rgb = piper(dat[:, 2:10], "title", use_color=True, fig=fig)
-fig.savefig(filename + "_piper_plot.png", dpi=120)
+fig.savefig(filename + "_piper_plot6.png", dpi=120)
